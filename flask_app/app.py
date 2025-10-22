@@ -116,8 +116,8 @@ model_name = "my_model"
 def get_latest_model_version(model_name):
     client = mlflow.MlflowClient()
     # print(client.get_latest_versions(model_name, stages=["Staging"]))
-    latest_version = client.get_latest_versions(model_name, stages=["Staging"])
-    # latest_version = client.get_latest_versions(model_name, stages=["Production"])
+    # latest_version = client.get_latest_versions(model_name, stages=["Staging"])
+    latest_version = client.get_latest_versions(model_name, stages=["Production"])
     if not latest_version:
         latest_version = client.get_latest_versions(model_name, stages=["None"])
     return latest_version[0].version if latest_version else None
@@ -167,5 +167,5 @@ def metrics():
     return generate_latest(registry), 200, {"Content-Type": CONTENT_TYPE_LATEST}
 
 if __name__ == "__main__":
-    app.run(debug=True) # for local use
-    # app.run(debug=True, host="0.0.0.0", port=5000)  # Accessible from outside Docker
+    # app.run(debug=True) # for local use
+    app.run(debug=True, host="0.0.0.0", port=5000)  # Accessible from outside Docker
