@@ -208,5 +208,9 @@ __marimo__/
 cred.txt
 notebooks/
 local_s3/
-data/
+data/external
+data/interim
+data/processed
+data/raw
+!src/data/
 models/
