@@ -110,12 +110,6 @@ PREDICTION_COUNT = Counter(
     "model_prediction_count", "Count of predictions for each class", ["prediction"], registry=registry
 )
 
-# from mlflow.tracking import MlflowClient
-
-# client = MlflowClient()
-# for mv in client.search_model_versions("name='my_model'"):
-#     print(f"Version: {mv.version}, Stage: {mv.current_stage}, Run ID: {mv.run_id}")
-
 # ------------------------------------------------------------------------------------------
 # Model and vectorizer setup
 model_name = "my_model"
